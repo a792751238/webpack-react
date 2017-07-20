@@ -7,7 +7,7 @@ module.exports = { //注意这里是exports不是export
     entry: __dirname + "/app/main.js", //唯一入口文件
     output: { //输出目录
         path: __dirname + "/build/js", //打包后的js文件存放的地方
-        filename: 'bundle.js', //打包后的js文件名
+        filename: 'build.js', //打包后的js文件名
     },
     module: {
         loaders: [{
