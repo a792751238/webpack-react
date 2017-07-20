@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --devtool eval --progress --colors --hot --history-api-fallback --inline --content-base dist",
+    "start": "webpack-dev-server",
     "build": "NODE_ENV=production webpack",
     "build_win": "set NODE_ENV=production&&webpack"
   },
@@ -26,12 +26,6 @@
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "webpack": "^3.3.0"
-  },
-  "babel": {
-    "presets": [
-      "es2015",
-      "react"
-    ]
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
