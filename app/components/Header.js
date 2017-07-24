@@ -3,11 +3,13 @@
  */
 
 import React, {Component} from 'react';
-
+import {Button} from 'antd';
 
 const Header = (props) => {
     return (
-        <div className="header">this is header</div>
+        <div className="header">this is header
+            <Button type="primary">hello world</Button>
+        </div>
     )
 }
 
