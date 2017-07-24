@@ -1,13 +1,11 @@
 import React from 'react';
 import {Layout, Menu, Icon} from 'antd';
 import {
-    BrowserRouter as Router,
     Route,
-    NavLink,
-    Link
+    NavLink
 } from 'react-router-dom'
+const {Header, Sider, Footer} = Layout;
 
-const {Header, Sider, Content, Footer} = Layout;
 import Content01 from './content/Content01';
 import Content02 from './content2/Content02';
 import Content03 from './content3/Content03';
@@ -37,7 +35,7 @@ class App extends React.Component {
     }
 
     componentWillMount() {
-        const {history} = this.props
+        const {history} = this.props;
         history.replace('/content');
     }
 
@@ -99,5 +97,8 @@ class App extends React.Component {
         )
     }
 }
+
+
+
 
 export default App;

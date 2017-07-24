@@ -3,8 +3,12 @@
  */
 
 import React from 'react';
-import {Layout,Button,Table,Icon} from 'antd';
+import {Layout, Button, Table, Icon} from 'antd';
 const {Content} = Layout;
+import {connect} from 'react-redux';
+import {
+    addItems
+} from '../app.actions';
 
 
 const columns = [{
@@ -26,40 +30,55 @@ const columns = [{
     render: (text, record) => (
         <span>
       <a href="#">Action 一 {record.name}</a>
-      <span className="ant-divider" />
+      <span className="ant-divider"/>
       <a href="#">Delete</a>
-      <span className="ant-divider" />
+      <span className="ant-divider"/>
       <a href="#" className="ant-dropdown-link">
-        More actions <Icon type="down" />
+        More actions <Icon type="down"/>
       </a>
     </span>
     ),
 }];
 
-const data = [{
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-}, {
-    key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-}, {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sidney No. 1 Lake Park',
-}];
 
-const Content01 = (props) => {
-    return (
-        <Content style={{margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280}}>
-            <Button type="primary">添加</Button>
-            <Table columns={columns} dataSource={data} />
-        </Content>
-    )
+class Content01 extends React.Component {
+    constructor(props) {
+        super();
+        this.addItem = this.addItem.bind(this);
+    }
+
+    addItem() {
+        const item = {
+            key: '4',
+            name: 'J213n Brown',
+            age: 3213,
+            address: '213123',
+        };
+
+        this.props.addItems(item);
+        console.log(item);
+    }
+
+    render() {
+        const data = this.props.items.toJS();
+        return (
+            <Content style={{margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280}}>
+                <Button type="primary" onClick={this.addItem}>添加</Button>
+                <Table columns={columns} dataSource={data}/>
+            </Content>
+        )
+    }
 }
 
-export default Content01;
+function mapStateToProps(state) {
+    console.log(state);
+    return {
+        items: state.get('app').get('items')
+    }
+}
+
+const mapActionCreators = {
+    addItems
+};
+
+export default connect(mapStateToProps, mapActionCreators)(Content01);
