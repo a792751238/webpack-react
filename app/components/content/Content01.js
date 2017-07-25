@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-import {Layout, Button, Table, Icon} from 'antd';
+import {Layout, Button, Table, Icon, Modal} from 'antd';
 const {Content} = Layout;
 import {connect} from 'react-redux';
 import {
@@ -44,8 +44,18 @@ const columns = [{
 class Content01 extends React.Component {
     constructor(props) {
         super();
+        this.state = {
+            visibleModal: false
+        };
+
+        this.showModal = (view = true) => {
+            this.setState({
+                visibleModal: view
+            })
+        }
         this.addItem = this.addItem.bind(this);
     }
+
 
     addItem() {
         const item = {
@@ -63,8 +73,21 @@ class Content01 extends React.Component {
         const data = this.props.items.toJS();
         return (
             <Content style={{margin: '24px 16px', padding: 24, background: '#fff', minHeight: 280}}>
-                <Button type="primary" onClick={this.addItem}>添加</Button>
+                <Button type="primary" onClick={this.showModal}>添加</Button>
                 <Table columns={columns} dataSource={data}/>
+                <Modal title="添加一行"
+                       visible={this.state.visibleModal}
+                       onOk={() => {
+                           this.showModal(false)
+                       }}
+                       onCancel={() => {
+                           this.showModal(false)
+                       }}
+                >
+                    <p>12312414e</p>
+                    <p>12312414e</p>
+                    <p>12312414e</p>
+                </Modal>
             </Content>
         )
     }
