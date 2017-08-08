@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server",
-    "build": "NODE_ENV=production webpack",
+    "build": "webpack",
     "build_win": "set NODE_ENV=production&&webpack"
   },
   "author": "easterCat",
@@ -38,6 +38,7 @@
     "css-loader": "^0.28.4",
     "file-loader": "^0.11.2",
     "immutable": "^3.8.1",
+    "jquery": "^3.2.1",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
     "react": "^15.6.1",
