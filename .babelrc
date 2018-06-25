@@ -1,10 +1,13 @@
 //.babelrc
 {
   "presets": [
-    "react",
-    "es2015"
+    "env",
+    "react"
   ],
   "plugins": [
+    "transform-runtime",
+    "babel-plugin-transform-object-rest-spread",
+    "transform-remove-strict-mode",
     [
       "import",
       {
