@@ -12,6 +12,7 @@ module.exports = {
         filename: 'app.js',
     },
     resolve: {
+        extensions: ['.js', '.jsx'], //后缀名自动补全,可以使用jsx的文件后缀
         modules: [
             path.resolve(__dirname, 'node_modules')
         ]

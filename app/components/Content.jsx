@@ -3,10 +3,11 @@
  */
 import React from 'react';
 
-export default function App() {
+export default function Content() {
     return (
-        <div>
-            hello world
+        <div className="content">
+            this is content
         </div>
     )
 }
+
