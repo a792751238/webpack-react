@@ -14,7 +14,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx'], //后缀名自动补全,可以使用jsx的文件后缀
         modules: [
-            path.resolve(__dirname, 'node_modules')
+            path.resolve(ROOTPATH, 'node_modules')
         ]
     },
     module: {
@@ -90,7 +90,7 @@ module.exports = {
         }]
     },
     devServer: {
-        contentBase: './dist',
+        contentBase: path.resolve(ROOTPATH, './dist'),
         historyApiFallback: true,
         inline: true,//源文件改变,会自动刷新页面
         port: 1234,//设置默认监听端口，如果省略，默认为"8080"
