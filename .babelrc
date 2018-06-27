@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "style": true //引入less，如果使用css文件就改为'css'
+      }
+    ]
+  ]
+}
